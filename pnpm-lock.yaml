@@ -40,7 +40,7 @@ importers:
         version: 6.0.1
       tsup:
         specifier: ^8
-        version: 8.5.0(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)
+        version: 8.5.0(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1)
       typescript:
         specifier: ^5
         version: 5.9.3
@@ -56,7 +56,7 @@ importers:
     devDependencies:
       '@kb-labs/devkit':
         specifier: github:KirillBaranov/kb-labs-devkit#main
-        version: https://codeload.github.com/KirillBaranov/kb-labs-devkit/tar.gz/5dd910147b8c09742ca13aeb2ea6aba5ffc5159b(@typescript-eslint/parser@8.46.2(eslint@9.38.0)(typescript@5.9.3))(eslint@9.38.0)(tsup@8.5.0(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3))(typescript-eslint@8.46.2(eslint@9.38.0)(typescript@5.9.3))(typescript@5.9.3)(vitest@3.2.4(@types/node@24.10.1))
+        version: https://codeload.github.com/KirillBaranov/kb-labs-devkit/tar.gz/2cddd701efb46f22c202e5f32d2e9c1237ac8b8e(@playwright/test@1.57.0)(@typescript-eslint/parser@8.46.2(eslint@9.38.0)(typescript@5.9.3))(eslint@9.38.0)(tsup@8.5.0(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1))(typescript-eslint@8.46.2(eslint@9.38.0)(typescript@5.9.3))(typescript@5.9.3)(vitest@3.2.4(@types/node@24.10.1))
       '@vitejs/plugin-vue':
         specifier: ^5.0.0
         version: 5.2.4(vite@5.4.21(@types/node@24.10.1))(vue@3.5.22(typescript@5.9.3))
@@ -90,7 +90,7 @@ importers:
         version: 6.0.1
       tsup:
         specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)
+        version: 8.5.0(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1)
       typescript:
         specifier: ^5.6.3
         version: 5.9.3
@@ -115,7 +115,7 @@ importers:
         version: 6.0.1
       tsup:
         specifier: ^8.5.0
-        version: 8.5.0(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)
+        version: 8.5.0(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1)
       typescript:
         specifier: ^5.6.3
         version: 5.9.3
@@ -144,9 +144,15 @@ importers:
       '@kb-labs/devkit':
         specifier: link:../../../kb-labs-devkit
         version: link:../../../kb-labs-devkit
+      '@types/fs-extra':
+        specifier: ^11.0.4
+        version: 11.0.4
       '@types/node':
         specifier: ^24.3.3
         version: 24.10.1
+      '@types/picomatch':
+        specifier: ^4.0.2
+        version: 4.0.2
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -578,17 +584,34 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@kb-labs/devkit@https://codeload.github.com/KirillBaranov/kb-labs-devkit/tar.gz/5dd910147b8c09742ca13aeb2ea6aba5ffc5159b':
-    resolution: {tarball: https://codeload.github.com/KirillBaranov/kb-labs-devkit/tar.gz/5dd910147b8c09742ca13aeb2ea6aba5ffc5159b}
+  '@kb-labs/devkit@https://codeload.github.com/KirillBaranov/kb-labs-devkit/tar.gz/2cddd701efb46f22c202e5f32d2e9c1237ac8b8e':
+    resolution: {tarball: https://codeload.github.com/KirillBaranov/kb-labs-devkit/tar.gz/2cddd701efb46f22c202e5f32d2e9c1237ac8b8e}
     version: 0.1.0
     engines: {node: '>=20.0.0', pnpm: '>=9.11.0'}
     hasBin: true
     peerDependencies:
+      '@playwright/test': '*'
+      '@testing-library/react': '*'
+      '@vitejs/plugin-react': '*'
       eslint: ^9.35.0
+      eslint-plugin-jsx-a11y: '*'
+      eslint-plugin-react-hooks: '*'
+      react: '*'
       tsup: ^8.5.0
       typescript: ^5.9.2
       typescript-eslint: ^8.44.0
       vitest: ^3.2.4
+    peerDependenciesMeta:
+      '@testing-library/react':
+        optional: true
+      '@vitejs/plugin-react':
+        optional: true
+      eslint-plugin-jsx-a11y:
+        optional: true
+      eslint-plugin-react-hooks:
+        optional: true
+      react:
+        optional: true
 
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
@@ -612,6 +635,11 @@ packages:
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
+
+  '@playwright/test@1.57.0':
+    resolution: {integrity: sha512-6TyEnHgd6SArQO8UO2OMTxshln3QMWBtPGrOCgs3wVEmQmwyuNtB10IZMfmYDE0riwNR1cu4q+pPcxMVtaG3TA==}
+    engines: {node: '>=18'}
+    hasBin: true
 
   '@rollup/rollup-android-arm-eabi@4.52.5':
     resolution: {integrity: sha512-8c1vW4ocv3UOMp9K+gToY5zL2XiiVw3k7f1ksf4yO1FlDFQ1C2u72iACFnSOceJFsWskc2WZNqeRhFRPzv+wtQ==}
@@ -738,14 +766,23 @@ packages:
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
 
+  '@types/fs-extra@11.0.4':
+    resolution: {integrity: sha512-yTbItCNreRooED33qjunPthRcSjERP1r4MqCZc7wv0u2sUkzTFp45tgUfS5+r7FrZPdmCCNflLhVSP/o+SemsQ==}
+
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
 
+  '@types/jsonfile@6.1.4':
+    resolution: {integrity: sha512-D5qGUYwjvnNNextdU59/+fI+spnwtTFmyQP0h+PfIOSkNfpU6AOICUOkm4i0OnSk+NyjdPJrxCDro0sJsWlRpQ==}
+
   '@types/node@24.10.1':
     resolution: {integrity: sha512-GNWcUTRBgIRJD5zj+Tq0fKOJ5XZajIiBroOF0yvj2bSU1WvNdYS/dn9UxwsujGW4JX06dnHyjV2y9rRaybH0iQ==}
+
+  '@types/picomatch@4.0.2':
+    resolution: {integrity: sha512-qHHxQ+P9PysNEGbALT8f8YOSHW0KJu6l2xU8DYY0fu/EmGxXdVnuTLvFUvBgPJMSqXq29SYHveejeAha+4AYgA==}
 
   '@typescript-eslint/eslint-plugin@8.46.2':
     resolution: {integrity: sha512-ZGBMToy857/NIPaaCucIUQgqueOiq7HeAKkhlvqVV4lm089zUFW6ikRySx2v+cAhKeUCPuWVHeimyk6Dw1iY3w==}
@@ -1436,6 +1473,11 @@ packages:
     resolution: {integrity: sha512-Xr9F6z6up6Ws+NjzMCZc6WXg2YFRlrLP9NQDO3VQrWrfiojdhS56TzueT88ze0uBdCTwEIhQ3ptnmKeWGFAe0A==}
     engines: {node: '>=14.14'}
 
+  fsevents@2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -1915,6 +1957,16 @@ packages:
 
   pkg-types@1.3.1:
     resolution: {integrity: sha512-/Jm5M4RvtBFVkKWRu2BLUTNP8/M2a+UwuAX+ae4770q1qVGtfjG+WTCupoZixokjmHiry8uI+dlY8KXYV5HVVQ==}
+
+  playwright-core@1.57.0:
+    resolution: {integrity: sha512-agTcKlMw/mjBWOnD6kFZttAAGHgi/Nw0CZ2o6JqWSbMlI219lAFLZZCyqByTsvVAJq5XA5H8cA6PrvBRpBWEuQ==}
+    engines: {node: '>=18'}
+    hasBin: true
+
+  playwright@1.57.0:
+    resolution: {integrity: sha512-ilYQj1s8sr2ppEJ2YVadYBN0Mb3mdo9J0wQ+UuDhzYqURwSoW4n1Xs5vs7ORwgDGmyEh33tRMeS8KhdkMoLXQw==}
+    engines: {node: '>=18'}
+    hasBin: true
 
   possible-typed-array-names@1.1.0:
     resolution: {integrity: sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg==}
@@ -2409,6 +2461,11 @@ packages:
     resolution: {integrity: sha512-ICP2e+jsHvAj2E2lIHxa5tjXRlKDJo4IdvPvCXbXQGdzSfmSpNVyIKMvoZHjDY9DP0zV17iI85o90vRFXNccRw==}
     engines: {node: '>=12'}
 
+  yaml@2.8.1:
+    resolution: {integrity: sha512-lcYcMxX2PO9XMGvAJkJ3OsNMw+/7FKes7/hgerGUYWIoWu5j/+YQqcZr5JnPZWzOsEBgMbSbiSTn/dv/69Mkpw==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
+
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
@@ -2691,15 +2748,18 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@kb-labs/devkit@https://codeload.github.com/KirillBaranov/kb-labs-devkit/tar.gz/5dd910147b8c09742ca13aeb2ea6aba5ffc5159b(@typescript-eslint/parser@8.46.2(eslint@9.38.0)(typescript@5.9.3))(eslint@9.38.0)(tsup@8.5.0(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3))(typescript-eslint@8.46.2(eslint@9.38.0)(typescript@5.9.3))(typescript@5.9.3)(vitest@3.2.4(@types/node@24.10.1))':
+  '@kb-labs/devkit@https://codeload.github.com/KirillBaranov/kb-labs-devkit/tar.gz/2cddd701efb46f22c202e5f32d2e9c1237ac8b8e(@playwright/test@1.57.0)(@typescript-eslint/parser@8.46.2(eslint@9.38.0)(typescript@5.9.3))(eslint@9.38.0)(tsup@8.5.0(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1))(typescript-eslint@8.46.2(eslint@9.38.0)(typescript@5.9.3))(typescript@5.9.3)(vitest@3.2.4(@types/node@24.10.1))':
     dependencies:
+      '@playwright/test': 1.57.0
       eslint: 9.38.0
       eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@9.38.0)
       eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.46.2(eslint@9.38.0)(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.38.0)
-      tsup: 8.5.0(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)
+      glob: 11.0.3
+      tsup: 8.5.0(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1)
       typescript: 5.9.3
       typescript-eslint: 8.46.2(eslint@9.38.0)(typescript@5.9.3)
       vitest: 3.2.4(@types/node@24.10.1)
+      yaml: 2.8.1
     transitivePeerDependencies:
       - '@typescript-eslint/parser'
       - eslint-import-resolver-webpack
@@ -2729,6 +2789,10 @@ snapshots:
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
+
+  '@playwright/test@1.57.0':
+    dependencies:
+      playwright: 1.57.0
 
   '@rollup/rollup-android-arm-eabi@4.52.5':
     optional: true
@@ -2812,13 +2876,24 @@ snapshots:
 
   '@types/estree@1.0.8': {}
 
+  '@types/fs-extra@11.0.4':
+    dependencies:
+      '@types/jsonfile': 6.1.4
+      '@types/node': 24.10.1
+
   '@types/json-schema@7.0.15': {}
 
   '@types/json5@0.0.29': {}
 
+  '@types/jsonfile@6.1.4':
+    dependencies:
+      '@types/node': 24.10.1
+
   '@types/node@24.10.1':
     dependencies:
       undici-types: 7.16.0
+
+  '@types/picomatch@4.0.2': {}
 
   '@typescript-eslint/eslint-plugin@8.46.2(@typescript-eslint/parser@8.46.2(eslint@9.38.0)(typescript@5.9.3))(eslint@9.38.0)(typescript@5.9.3)':
     dependencies:
@@ -3698,6 +3773,9 @@ snapshots:
       jsonfile: 6.2.0
       universalify: 2.0.1
 
+  fsevents@2.3.2:
+    optional: true
+
   fsevents@2.3.3:
     optional: true
 
@@ -4188,6 +4266,14 @@ snapshots:
       mlly: 1.8.0
       pathe: 2.0.3
 
+  playwright-core@1.57.0: {}
+
+  playwright@1.57.0:
+    dependencies:
+      playwright-core: 1.57.0
+    optionalDependencies:
+      fsevents: 2.3.2
+
   possible-typed-array-names@1.1.0: {}
 
   postcss-load-config@6.0.1(postcss@8.5.6)(tsx@4.20.6):
@@ -4196,6 +4282,14 @@ snapshots:
     optionalDependencies:
       postcss: 8.5.6
       tsx: 4.20.6
+
+  postcss-load-config@6.0.1(postcss@8.5.6)(tsx@4.20.6)(yaml@2.8.1):
+    dependencies:
+      lilconfig: 3.1.3
+    optionalDependencies:
+      postcss: 8.5.6
+      tsx: 4.20.6
+      yaml: 2.8.1
 
   postcss-selector-parser@6.1.2:
     dependencies:
@@ -4539,6 +4633,34 @@ snapshots:
       - tsx
       - yaml
 
+  tsup@8.5.0(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1):
+    dependencies:
+      bundle-require: 5.1.0(esbuild@0.25.11)
+      cac: 6.7.14
+      chokidar: 4.0.3
+      consola: 3.4.2
+      debug: 4.4.3
+      esbuild: 0.25.11
+      fix-dts-default-cjs-exports: 1.0.1
+      joycon: 3.1.1
+      picocolors: 1.1.1
+      postcss-load-config: 6.0.1(postcss@8.5.6)(tsx@4.20.6)(yaml@2.8.1)
+      resolve-from: 5.0.0
+      rollup: 4.52.5
+      source-map: 0.8.0-beta.0
+      sucrase: 3.35.0
+      tinyexec: 0.3.2
+      tinyglobby: 0.2.15
+      tree-kill: 1.2.2
+    optionalDependencies:
+      postcss: 8.5.6
+      typescript: 5.9.3
+    transitivePeerDependencies:
+      - jiti
+      - supports-color
+      - tsx
+      - yaml
+
   tsx@4.20.6:
     dependencies:
       esbuild: 0.25.11
@@ -4800,6 +4922,8 @@ snapshots:
       strip-ansi: 7.1.2
 
   xml-name-validator@4.0.0: {}
+
+  yaml@2.8.1: {}
 
   yocto-queue@0.1.0: {}
 
