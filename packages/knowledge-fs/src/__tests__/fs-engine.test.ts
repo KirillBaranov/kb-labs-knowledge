@@ -9,7 +9,7 @@ import type {
 import {
   FileSystemKnowledgeEngine,
   type FileSystemEngineConfigOptions,
-} from '../fs-engine.js';
+} from '../fs-engine';
 
 const scope = {
   id: 'default',

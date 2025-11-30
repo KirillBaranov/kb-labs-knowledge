@@ -10,7 +10,7 @@ import type {
   KnowledgeCapability,
   KnowledgeProfile,
 } from '@kb-labs/knowledge-contracts';
-import type { KnowledgeLogger } from './logger.js';
+import type { KnowledgeLogger } from './logger';
 
 export interface KnowledgeIndexOptions {
   scope: KnowledgeScope;

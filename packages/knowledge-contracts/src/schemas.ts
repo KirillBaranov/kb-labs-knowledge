@@ -3,7 +3,7 @@ import {
   knowledgeEngineTypes,
   knowledgeIntents,
   knowledgeSourceKinds,
-} from './types.js'
+} from './types'
 
 export const spanRangeSchema = z
   .object({

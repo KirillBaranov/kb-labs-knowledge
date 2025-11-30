@@ -4,15 +4,15 @@ import type {
   KnowledgeResult,
   KnowledgeQuery,
 } from '@kb-labs/knowledge-contracts';
-import { createKnowledgeError } from './errors.js';
+import { createKnowledgeError } from './errors';
 import type {
   KnowledgeEngine,
   KnowledgeEngineFactory,
   KnowledgeEngineFactoryContext,
   KnowledgeExecutionContext,
   KnowledgeIndexOptions,
-} from './engine.js';
-import type { KnowledgeLogger } from './logger.js';
+} from './engine';
+import type { KnowledgeLogger } from './logger';
 
 export class KnowledgeEngineRegistry {
   private readonly factories = new Map<

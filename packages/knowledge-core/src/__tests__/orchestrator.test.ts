@@ -10,7 +10,7 @@ import {
   type KnowledgeEngine,
   type KnowledgeExecutionContext,
   type KnowledgeResult,
-} from '../index.js';
+} from '../index';
 
 class StubEngine implements KnowledgeEngine {
   readonly id: string;

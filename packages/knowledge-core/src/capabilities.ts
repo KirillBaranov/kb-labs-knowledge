@@ -3,7 +3,7 @@ import type {
   KnowledgeCapabilityRegistry,
   KnowledgeIntent,
 } from '@kb-labs/knowledge-contracts';
-import { createKnowledgeError } from './errors.js';
+import { createKnowledgeError } from './errors';
 
 export function getCapability(
   registry: KnowledgeCapabilityRegistry | undefined,

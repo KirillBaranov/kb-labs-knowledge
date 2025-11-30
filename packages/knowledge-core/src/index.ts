@@ -1,23 +1,23 @@
 export type {
   KnowledgeService,
   KnowledgeServiceOptions,
-} from './orchestrator.js';
-export { createKnowledgeService, KnowledgeOrchestrator } from './orchestrator.js';
+} from './orchestrator';
+export { createKnowledgeService, KnowledgeOrchestrator } from './orchestrator';
 export type {
   KnowledgeEngine,
   KnowledgeEngineFactory,
   KnowledgeEngineFactoryContext,
   KnowledgeExecutionContext,
   KnowledgeIndexOptions,
-} from './engine.js';
+} from './engine';
 export {
   KnowledgeEngineRegistry,
   createKnowledgeEngineRegistry,
-} from './registry.js';
+} from './registry';
 export {
   KnowledgeError,
   type KnowledgeErrorCode,
   type KnowledgeErrorDetail,
   createKnowledgeError,
-} from './errors.js';
-export type { KnowledgeLogger } from './logger.js';
+} from './errors';
+export type { KnowledgeLogger } from './logger';

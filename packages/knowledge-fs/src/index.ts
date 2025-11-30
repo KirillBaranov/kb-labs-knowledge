@@ -3,4 +3,4 @@ export {
   createFileSystemKnowledgeEngineFactory,
   registerFileSystemEngine,
   type FileSystemEngineConfigOptions,
-} from './fs-engine.js';
+} from './fs-engine';

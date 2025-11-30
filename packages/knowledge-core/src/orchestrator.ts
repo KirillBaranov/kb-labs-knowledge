@@ -12,30 +12,30 @@ import {
   type KnowledgeSource,
   knowledgeConfigSchema,
 } from '@kb-labs/knowledge-contracts';
-import { createKnowledgeError } from './errors.js';
+import { createKnowledgeError } from './errors';
 import type {
   KnowledgeEngine,
   KnowledgeEngineFactoryContext,
   KnowledgeExecutionContext,
   KnowledgeIndexOptions,
-} from './engine.js';
+} from './engine';
 import {
   KnowledgeEngineRegistry,
   createKnowledgeEngineRegistry,
-} from './registry.js';
-import type { KnowledgeLogger } from './logger.js';
-import { createNullLogger } from './logger.js';
+} from './registry';
+import type { KnowledgeLogger } from './logger';
+import { createNullLogger } from './logger';
 import {
   ensureIntentAllowed,
   ensureScopeAllowed,
   getCapability,
-} from './capabilities.js';
+} from './capabilities';
 import {
   createProfileMap,
   resolveProfileSettings,
   type KnowledgeProfileMap,
   type ResolvedProfileSettings,
-} from './profiles.js';
+} from './profiles';
 
 const DEFAULT_MAX_CHUNKS = 32;
 

@@ -29,14 +29,14 @@
     "@kb-labs/knowledge-contracts": "workspace:*",
     "@kb-labs/knowledge-core": "workspace:*",
     "fast-glob": "^3.3.2",
-    "fs-extra": "^11.2.0",
+    "fs-extra": "^11.0.0",
     "picomatch": "^4.0.2"
   },
   "devDependencies": {
     "@kb-labs/devkit": "link:../../../kb-labs-devkit",
-    "@types/fs-extra": "^11.0.4",
+    "@types/fs-extra": "^11.0.0",
     "@types/node": "^24.3.3",
-    "@types/picomatch": "^4.0.2",
+    "@types/picomatch": "^4",
     "rimraf": "^6.0.1",
     "tsup": "^8.5.0",
     "typescript": "^5.6.3",
