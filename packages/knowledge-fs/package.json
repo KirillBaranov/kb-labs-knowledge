@@ -1,6 +1,6 @@
 {
   "name": "@kb-labs/knowledge-fs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Filesystem-backed utilities for the KB Labs knowledge orchestrator.",
   "type": "module",
   "main": "dist/index.js",
