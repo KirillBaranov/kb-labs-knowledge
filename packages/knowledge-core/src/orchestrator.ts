@@ -364,6 +364,8 @@ export class KnowledgeOrchestrator implements KnowledgeService {
       }
       return engine;
     } catch (error) {
+      console.error('[instantiateEngine] Error details:', error);
+      console.error('[instantiateEngine] Engine config:', record.config);
       throw createKnowledgeError(
         'KNOWLEDGE_ENGINE_FAILED',
         `Failed to initialize engine "${record.config.id}".`,
