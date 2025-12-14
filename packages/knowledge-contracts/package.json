@@ -1,6 +1,6 @@
 {
   "name": "@kb-labs/knowledge-contracts",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "Contracts, schemas, and shared types for the KB Labs knowledge orchestrator.",
   "type": "module",
   "main": "dist/index.js",
