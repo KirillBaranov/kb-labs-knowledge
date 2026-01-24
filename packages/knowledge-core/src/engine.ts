@@ -9,12 +9,14 @@ import type {
   KnowledgeSource,
   KnowledgeCapability,
   KnowledgeProfile,
+  IndexingStats,
 } from '@kb-labs/knowledge-contracts';
 import type { KnowledgeLogger } from './logger';
 
 export interface KnowledgeIndexOptions {
   scope: KnowledgeScope;
   force?: boolean;
+  workspaceRoot?: string;
 }
 
 export interface KnowledgeExecutionContext {
@@ -35,7 +37,7 @@ export interface KnowledgeEngine {
   index?(
     sources: KnowledgeSource[],
     options: KnowledgeIndexOptions,
-  ): Promise<void>;
+  ): Promise<IndexingStats | void>;
 
   query(
     query: KnowledgeQuery,

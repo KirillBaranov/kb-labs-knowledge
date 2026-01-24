@@ -10,6 +10,7 @@ import {
   type KnowledgeResult,
   type KnowledgeScope,
   type KnowledgeSource,
+  type IndexingStats,
   knowledgeConfigSchema,
 } from '@kb-labs/knowledge-contracts';
 import { createKnowledgeError } from './errors';
@@ -51,7 +52,7 @@ export interface KnowledgeServiceOptions {
 
 export interface KnowledgeService {
   query(query: KnowledgeQuery): Promise<KnowledgeResult>;
-  index(scopeId: string, options?: { force?: boolean }): Promise<void>;
+  index(scopeId: string, options?: { force?: boolean }): Promise<IndexingStats | void>;
 }
 
 interface EngineRecord {
@@ -141,7 +142,7 @@ export class KnowledgeOrchestrator implements KnowledgeService {
     };
   }
 
-  async index(scopeId: string, options?: { force?: boolean }): Promise<void> {
+  async index(scopeId: string, options?: { force?: boolean }): Promise<IndexingStats | void> {
     const scope = this.scopes.get(scopeId);
     if (!scope) {
       throw createKnowledgeError(
@@ -170,7 +171,7 @@ export class KnowledgeOrchestrator implements KnowledgeService {
       );
       return;
     }
-    await engine.index(sources, { scope, force: options?.force });
+    return engine.index(sources, { scope, force: options?.force, workspaceRoot: this.workspaceRoot });
   }
 
   private async resolveQueryContext(
