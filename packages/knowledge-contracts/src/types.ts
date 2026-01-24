@@ -141,3 +141,25 @@ export interface KnowledgeProfile {
   description?: string
   products: KnowledgeProfileProductOverrides
 }
+
+/**
+ * Statistics returned from indexing operation
+ */
+export interface IndexingStats {
+  /** Number of files discovered */
+  filesDiscovered: number
+  /** Number of files processed (chunked and embedded) */
+  filesProcessed: number
+  /** Number of files skipped (unchanged) */
+  filesSkipped: number
+  /** Total number of chunks stored */
+  chunksStored: number
+  /** Number of chunks updated (existing) */
+  chunksUpdated: number
+  /** Number of chunks skipped (duplicate) */
+  chunksSkipped: number
+  /** Number of errors encountered */
+  errorCount: number
+  /** Duration in milliseconds */
+  durationMs: number
+}
