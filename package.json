@@ -1,8 +1,7 @@
 {
-  "name": "@kb-labs/product-template",
+  "name": "@kb-labs/knowledge",
   "version": "0.1.0",
-  "private": true,
-  "description": "KB Labs product template — zero-config starter powered by @kb-labs/devkit.",
+  "description": "Knowledge management contracts and runtime for KB Labs ecosystem",
   "type": "module",
   "author": {
     "name": "Kirill Baranov",
@@ -11,12 +10,12 @@
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kirill-baranov/kb-labs-product-template.git"
+    "url": "https://github.com/kirill-baranov/kb-labs-knowledge.git"
   },
   "bugs": {
-    "url": "https://github.com/kirill-baranov/kb-labs-product-template/issues"
+    "url": "https://github.com/kirill-baranov/kb-labs-knowledge/issues"
   },
-  "homepage": "https://github.com/kirill-baranov/kb-labs-product-template#readme",
+  "homepage": "https://github.com/kirill-baranov/kb-labs-knowledge#readme",
   "workspaces": [
     "apps/*",
     "packages/*"
@@ -69,7 +68,8 @@
     "tsup": "^8",
     "typescript": "^5",
     "vitest": "^3.2.4",
-    "@byjohann/toon": "*"
+    "@byjohann/toon": "*",
+    "@types/node": "^24.3.3"
   },
   "engines": {
     "node": ">=18.18.0",
